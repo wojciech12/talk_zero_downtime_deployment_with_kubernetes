@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: zero-demo
+  labels:
+    app: zero-demo
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: zero-demo
+  template:
+    metadata:
+      labels:
+        app: zero-demo
+    spec:
+      containers:
+      - name: app
+        image: wojciech11/zero-kube-demo:1.0.0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8090
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8090
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8090
+
+          # Intial delay is set to a high value to have a better
+          # visibility of the ramped deployment
+          initialDelaySeconds: 10
+          periodSeconds: 5

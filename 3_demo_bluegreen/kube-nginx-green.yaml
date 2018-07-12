@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: api-status-nginx-green
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: api-status-nginx
+        app: nginx
+        label: green
+    spec:
+      containers:
+      - name: nginx
+        image: wojciech11/api-status:green
+        ports:
+        - containerPort: 80
