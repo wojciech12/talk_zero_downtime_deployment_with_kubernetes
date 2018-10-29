@@ -5,7 +5,7 @@ Rolling-updates with Kubernetes
 Prereq
 ~~~~~~
 
-Deploy docker images to hub.docker.com, see `Makefile <demo-bluegreen/Makefile>`_
+Deploy docker images to hub.docker.com, see `Makefile <../1_demo_recreate/Makefile>`_
 
 With minikube
 ~~~~~~~~~~~~~
@@ -29,11 +29,14 @@ With minikube
 
 :: 
 
+  # in one terminal window:
   watch -n0.3 -x curl -s curl $(minikube ip):${SVC_PORT}
-  kubectl set image  deployment/demo-api app=wojciech11/api-status:green
 
-  # observe 
-  kubectl get po
+  # in another terminal window
+  watch -n1.0 -x kubectl get po
+
+  # upgrade
+  kubectl set image  deployment/demo-api app=wojciech11/api-status:2.0.0
 
 
 How to ensure, we wait for all the request to be closed?

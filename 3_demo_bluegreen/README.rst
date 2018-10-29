@@ -2,8 +2,19 @@
 Green Blue with Kubernetes
 ##########################
 
-With minikube
-~~~~~~~~~~~~~
+Prereq
+~~~~~~
+
+Get the images to docker hub:
+
+::
+
+  make docker_deploy
+
+Notice: You need to change DOCKER_PROJECT_ID in `Makefile <Makefile>`_.
+
+Demo
+~~~~
 
 ::
 
@@ -30,9 +41,9 @@ With minikube
   # let's get the green running
   kubectl apply -f kube-nginx-green.yaml
 
-  # 
-  watch -n0.3 -x curl -s  192.168.99.100:32151
+  watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}
 
   # let's make the switch
   kubectl patch service api-status -p '{"spec":{"selector": {"label": "green"} }}'
- 
+
+Notice: we could also accomplish this strategy using Ingress instead of Service.

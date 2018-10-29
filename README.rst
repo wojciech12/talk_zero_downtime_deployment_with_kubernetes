@@ -1,19 +1,40 @@
 =================================================
-Zero deployment of Golang Service with Kubernetes
+Zero deployment of Microservices with Kubernetes
 =================================================
 
-Work-In-Progress - a series of talks about rolling new versions to production with Kubernetes.
+Talk on deployment strategies with Kubernetes covering kubernetes configuration files and the actual implementation of your service in Golang (see `demo <demo>`_). 
 
+You will find demos for recreate, rolling updates, blue-green, and canary deployments.
 
-Event: https://www.meetup.com/meetup-group-nGBiendv/events/255191675/
+In future, I will aslo provide running examples for a shadow deployment and feature toggle.
+
+Talk was presented at:
+https://www.meetup.com/meetup-group-nGBiendv/events/255191675/
+
+Slides:
+
+- in `pdf <slides/index.pdf>`_ (source: `slides/ <slides/>`_)
+- LinkedIN slideshare
+
+Demos:
+
+- `Recreate <1_demo_recreate>`_
+- `Rolling Updates <2_demo_rolling_updates>`_
+- `Blue Green <3_demo_bluegreen>`_
+- `Canary <4_demo_canary>`_
+- `Micro-service implementation with Golang <demo>`_ based on `missy <https://github.com/microdevs/missy>`_
+
+Work-In-Progess: ab testing / feature toggle and shadow deployments. I will also provide a Python example.
+
+If you find slides helpful: please give a LIKE to my Linkedin post about this talk or a star to this github repo.
+
+Looking for a Java implementation, check `Mateusz Dyminski talk <https://github.com/mateuszdyminski/zero>`_.
 
 How to build your component
 ===========================
 
-livenessProbe and readinessprobe
+livenessProbe and readinessProbe
 --------------------------------
-
-Slow start of a component, long recovery times:
 
 - livenessProbe:
 
@@ -32,7 +53,7 @@ Slow start of a component, long recovery times:
           successThreshold: 1
           failureThreshold: 3
 
-- readinessprobe:
+- readinessProbe:
 
   ::
 
@@ -44,59 +65,21 @@ Slow start of a component, long recovery times:
       initialDelaySeconds: 5
       periodSeconds: 5
 
-See: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
-
 Graceful shutdown
 -----------------
 
-- on SIGTERM
-
-Rolling updates
-===============
-
-::
-
-  spec:
-    replicas: 4
-    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        maxUnavailable: 0
-        maxSurge: 1
-
-
-Green/Blue
-==========
-
-::
-
-    selector:
-      app: document-blue
-
-Canary with Traefik
-===================
-
-See:
-
-- https://github.com/containous/traefik/blob/master/docs/user-guide/kubernetes.md
-- https://docs.traefik.io/configuration/backends/kubernetes/
-
-Bonus - Istio / Linkerd
-=======================
-
-- Canary
-- Feature Toggle
-- A/B
-
-TBD
+- handling SIGTERM
+- ``health`` and ``ready`` implementation
 
 Related Work
 ============
 
+- https://github.com/mateuszdyminski/zero
 - https://kubernetes.io/blog/2018/04/30/zero-downtime-deployment-kubernetes-jenkins/
 - https://container-solutions.com/kubernetes-deployment-strategies/
 - https://github.com/ContainerSolutions/k8s-deployment-strategies/tree/master/ab-testing
 - http://blog.christianposta.com/deploy/blue-green-deployments-a-b-testing-and-canary-releases/
-- https://github.com/mateuszdyminski/zero
 - https://linkerd.io/
 - https://istio.io/
+- https://github.com/containous/traefik/blob/master/docs/user-guide/kubernetes.md
+- https://docs.traefik.io/configuration/backends/kubernetes/

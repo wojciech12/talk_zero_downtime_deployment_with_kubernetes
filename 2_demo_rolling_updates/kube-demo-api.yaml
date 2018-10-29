@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: wojciech11/api-status:blue
+        image: wojciech11/api-status:1.0.0
         ports:
         - containerPort: 80
         livenessProbe:

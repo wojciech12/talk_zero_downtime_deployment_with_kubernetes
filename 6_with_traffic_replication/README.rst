@@ -1,5 +1,5 @@
-===
-TBD
-===
+========================
+Shadow Deployments [WIP]
+========================
 
-A demo for trafik replication deployment (shadow deployment).
+A placeholder for a demo with (most probably) Istio.

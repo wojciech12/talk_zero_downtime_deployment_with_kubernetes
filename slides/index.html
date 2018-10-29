@@ -37,12 +37,12 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h3>Deployment of your micro-service.</h3>
+					<h3>Deployment strategies for your micro-service with k8s</h3>
 
 					<img src="img/logo_kubernetes.svg" class="center-block" style="background-color:white;border:0;width: 30%"/>
-				<h3>Let's go!</h3>
+				<h5>+ how to prepare your service</h5>
 					<br />
-					<small>Wojciech Barczynski - SMACC.io | Hypatos.ai<br />Wrzesień 2018</small>
+					<small>Wojciech Barczynski - SMACC.io | Hypatos.ai<br />Listopad 2018</small>
 				</section>
 
 
@@ -87,27 +87,27 @@
 <section>
 	<h3>Agenda.</h3>
 	<ul>
-				<li>Mikroserwises</li>
-				<li>Dlaczego kubernetes?</li>
-				<li>Popularne strategie deploymentu</li>
-				<li>Jak przygotować mikroserwis?</li>
+		<li>Mikroserwises</li>
+		<li>Dlaczego kubernetes?</li>
+		<li>Strategie deploymentu</li>
+		<li>Jak przygotować mikroserwis?</li>
 	</ul>
 </section>
 
 <section data-markdown>
 	<script type="text/template">
-## Micro-services
+### Micro-services
 
 - Scalling the team
 - ...
-- scalling the products
+- Scalling the products
 
 	</script>
 </section>
 
 <section data-markdown>
 	<script type="text/template">
-## Micro-services
+### Micro-services
 
 - Independent
 - Following 12factor app
@@ -118,7 +118,18 @@
 
 <section data-markdown>
 	<script type="text/template">
-## Micro-services
+### 12Factor App
+
+- Heroku - 2011
+- App easy to run in production
+- Low TCO
+- Easy to manage
+	</script>
+</section>
+
+<section data-markdown>
+	<script type="text/template">
+### Micro-services
 
 - <i>/healthz</li>
 - <i>/metrics</li>
@@ -130,7 +141,7 @@
 
 <section data-markdown>
 	<script type="text/template">
-## Micro-services
+### Micro-services
 
 - Do not need to share code
 - Share the same conventions
@@ -141,7 +152,7 @@
 
 <section data-markdown>
 	<script type="text/template">
-## Micro-services
+### Micro-services
 
 - Not a silver bullet :)
 	</script>
@@ -149,7 +160,7 @@
 
 <!--
 Domen boundary
-Pokedyncza odpowiedzialność
+Pojedyncza odpowiedzialność
 https://www.slideshare.net/mobile/chris.e.richardson/code-freeze-2018-there-is-no-such-thing-as-a-microservice?ref=https://microservices.io/microservices/news/2018/02/20/no-such-thing-as-a-microservice.html
 https://www.martinfowler.com/articles/microservices.html#CharacteristicsOfAMicroserviceArchitecture
 -->
@@ -467,7 +478,7 @@ Need to support:
 
 <section data-markdown>
 	<script type="text/template">
-### Liveness
+### Liveness Probe
 
 - our pod gets restarted
 - too many restarts -> CrashLoop
