@@ -2,18 +2,14 @@
 Zero deployment of Micro-services with Kubernetes
 =================================================
 
-Talk on deployment strategies with Kubernetes covering kubernetes configuration files and the actual implementation of your service in Golang (see `demo <demo>`_).
+Talk from `Pizza&Tech meetup in Wroclaw <https://www.meetup.com/meetup-group-nGBiendv/events/255191675/>`_ on deployment strategies with Kubernetes covering kubernetes configuration files and the actual implementation of your service in Golang (see `demo <demo>`_). 
 
-You will find demos for recreate, rolling updates, blue-green, and canary deployments.
-
-In future, I will aslo provide running examples for a shadow deployment and feature toggle.
-
-Talk from Pizza&Tech Meetup: https://www.meetup.com/meetup-group-nGBiendv/events/255191675/
+You will find demos for recreate, rolling updates, blue-green, and canary deployments. In future, I will provide also demos for  a shadow deployment and feature toggle.
 
 Slides:
 
 - in `pdf <slides/index.pdf>`_ (source: `slides/ <slides/>`_)
-- LinkedIN slideshare
+- `LinkedIN slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
 
 Demos:
 
@@ -25,7 +21,7 @@ Demos:
 
 Work-In-Progess: ab testing / feature toggle and shadow deployments. I will also provide a Python example.
 
-Helpful? Please give a *LIKE* to `my Linkedin post about this talk <https://www.linkedin.com/>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
+Helpful? Please give a *LIKE* to `my Linkedin post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6463041131910352896>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
 
 How to build your component
 ===========================
