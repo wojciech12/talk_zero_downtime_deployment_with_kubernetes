@@ -68,6 +68,17 @@ Check `demo <demo/>`_.
 
 Looking for a Java implementation, check `Mateusz Dyminski talk <https://github.com/mateuszdyminski/zero>`_.
 
+TBD
+---
+
+To Be Added before the next talk:
+
+1. cover: what happening is during a k8s upgrade
+2. cover: `anti-affinity <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>`_
+3. shadow deployment with (most probably) Istio
+4. feature switch with Golang
+5. A/B deployment with Golang
+6. Weight-based routing of requests with Traefik
 
 Related Work
 ============
