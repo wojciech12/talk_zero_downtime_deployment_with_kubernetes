@@ -19,8 +19,6 @@ Demos:
 - `Canary <4_demo_canary>`_
 - `Micro-service implementation with Golang <demo>`_ based on `missy <https://github.com/microdevs/missy>`_
 
-Work-In-Progess: ab testing / feature toggle and shadow deployments. I will also provide a Python example.
-
 Helpful? Please give a *LIKE* to `my Linkedin post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6463041131910352896>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
 
 How to build your component
@@ -75,10 +73,12 @@ To Be Added before the next talk:
 
 1. cover: what happening is during a k8s upgrade
 2. cover: `anti-affinity <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>`_
-3. shadow deployment with (most probably) Istio
-4. feature switch with Golang
-5. A/B deployment with Golang
-6. Weight-based routing of requests with Traefik
+3. conver ``pod's disruption budget``
+4. shadow deployment with (most probably) Istio
+5. feature switch with Golang
+6. A/B deployment with Golang
+7. Weight-based routing of requests with Traefik
+8. Python example.
 
 Related Work
 ============
