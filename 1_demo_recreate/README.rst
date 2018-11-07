@@ -43,7 +43,7 @@ Notice: it causes downtime.
 
   # run curl in an endless loop to
   # see the changes from the user perspective:
-  watch -n0.3 -x curl -s curl $(minikube ip):${SVC_PORT}
+  watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}
 
   # let's get from 1.0.0 to 2.0.0
   kubectl set image  deployment/demo-api app=wojciech11/api-status:2.0.0

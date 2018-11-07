@@ -2,14 +2,20 @@
 Zero deployment of Micro-services with Kubernetes
 =================================================
 
-Talk from `Pizza&Tech meetup in Wroclaw <https://www.meetup.com/meetup-group-nGBiendv/events/255191675/>`_ on deployment strategies with Kubernetes covering kubernetes configuration files and the actual implementation of your service in Golang (see `demo <demo>`_). 
+Do you need to implement a zero-downtime deployment for your product? Did you consider Kubernetes? Check whether my slides, demos of different deployment strategies, and an example of a micro-service can help you get started. The demos, you can run easily on minikube. The implementation, currently in `Golang <demo>`_, shows how to prepare your service to not lose requests on upgrade.
 
-You will find demos for recreate, rolling updates, blue-green, and canary deployments. In future, I will provide also demos for  a shadow deployment and feature toggle.
+The demos cover recreate, rolling updates, blue-green, and canary deployment strategies. In future, I will add other deployment approaches - see `TBD <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes#tbd>`_ below.
 
-Slides:
+So far, I presented this material at: `Pizza&Tech meetup in Wroclaw <https://www.meetup.com/meetup-group-nGBiendv/events/255191675/>`_ and -- the shorter version -- on `Golang Warsaw Meetup <https://www.meetup.com/Golang-Warsaw/events/255260613/>`_.
 
-- in `pdf <slides/index.pdf>`_ (source: `slides/ <slides/>`_)
-- `LinkedIN slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
+Slides for 1.5h:
+
+- `LinkedIN Slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
+- `Pdf <slides/index.pdf>`_ (source: `slides/ <slides/>`_)
+
+Slides for 40 minutes:
+
+- `Pdf <slides_short/index.pdf>`_ (source: `slides_short/ <slides_short/>`_)
 
 Demos:
 
@@ -19,7 +25,7 @@ Demos:
 - `Canary <4_demo_canary>`_
 - `Micro-service implementation with Golang <demo>`_ based on `missy <https://github.com/microdevs/missy>`_
 
-Helpful? Please give a *LIKE* to `my Linkedin post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6463041131910352896>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
+Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6463041131910352896>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
 
 How to build your component
 ===========================

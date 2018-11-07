@@ -44,7 +44,7 @@ Kubernetes
   kubectl apply -f kube-deployment.yaml
 
   export SVC_PORT=$(kubectl get service zero-demo --output='jsonpath="{.spec.ports[0].nodePort}"' | tr -d '"')
-  curl $(minikube ip):${SVC_PORT}
+  curl $(minikube ip):${SVC_PORT}/ready
 
   watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}/ready
 
@@ -56,3 +56,9 @@ Kubernetes
   # now, let's inform kubernetes that we are ill:
   # kubernetes will restart the pod
   $ curl 127.0.0.1:8090/doUnHealthz
+
+::
+
+  # cleanup before the next demo
+  kubectl delete -f kube-deployment.yaml
+  kubectl apply -f kube-service.yaml
