@@ -2,7 +2,7 @@
 Zero deployment of Micro-services with Kubernetes
 =================================================
 
-Do you need to implement a zero-downtime deployment for your product? Did you consider Kubernetes? Check whether my slides, demos of different deployment strategies, and an example of a micro-service can help you get started. The demos, you can run easily on minikube. The implementation, currently in `Golang <demo>`_, shows how to prepare your service to not lose requests on upgrade.
+Do you need to implement a zero-downtime deployment for your product? Did you consider Kubernetes? Check whether my slides, demos of different deployment strategies, and an example of a micro-service can help you get started. The demos, you can run easily on minikube. The implementation, currently in `Golang <demo>`_ and `.net core <demo_net>`_ shows how to prepare your service to not lose requests on upgrade.
 
 The demos cover recreate, rolling updates, blue-green, and canary deployment strategies. In future, I will add other deployment approaches - see `TBD <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes#tbd>`_ below.
 
