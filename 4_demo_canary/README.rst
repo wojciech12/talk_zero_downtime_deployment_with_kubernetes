@@ -38,3 +38,9 @@ Assuming the blue is our prod and green is our canary:
   kubectl scale --replicas=3 deploy/api-status-nginx-green
 
   # now we can delete the deployment blue
+
+
+::
+
+  export SVC_PORT=$(kubectl get service api-status --output='jsonpath="{.spec.ports[0].nodePort}"' | tr -d '"')
+  watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}

@@ -1,21 +1,17 @@
 =================================================
-Zero deployment of Micro-services with Kubernetes
+Zero deployment of Micro-Services with Kubernetes
 =================================================
 
-Do you need to implement a zero-downtime deployment for your product? Did you consider Kubernetes? Check whether my slides, demos of different deployment strategies, and an example of a micro-service can help you get started. The demos, you can run easily on minikube. The implementation, currently in `Golang <demo>`_ and `.net core <demo_net>`_ shows how to prepare your service to not lose requests on upgrade.
+Do you need to implement a zero-downtime deployment for your product? Did you consider Kubernetes? Check whether my slides, demos of different deployment strategies, and an service implementation example might help you get started. You can run all demos on minikube.
+
+To see how to prepare your microservice, check `Golang <demo>`_ and `.net core <demo_net>`_ implementations (*Looking for contributions in Py and Rust*).
 
 The demos cover recreate, rolling updates, blue-green, and canary deployment strategies. In future, I will add other deployment approaches - see `TBD <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes#tbd>`_ below.
 
-So far, I presented this material at: `Pizza&Tech meetup in Wroclaw <https://www.meetup.com/meetup-group-nGBiendv/events/255191675/>`_ and -- the shorter version -- on `Golang Warsaw Meetup <https://www.meetup.com/Golang-Warsaw/events/255260613/>`_.
+Slides:
 
-Slides for 1.5h:
-
-- `LinkedIN Slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
-- `Pdf <slides/index.pdf>`_ (source: `slides/ <slides/>`_)
-
-Slides for 40 minutes:
-
-- `Pdf <slides_short/index.pdf>`_ (source: `slides_short/ <slides_short/>`_)
+- `LinkedIn SlideShare <https://www.slideshare.net/WojciechBarczyski/zero-downtime-deployment-of-microservices-with-kubernetes>`_
+- `Pdf <slides_short/index.pdf>`_ (source: `slides/ <slides/>`_)
 
 Demos:
 
@@ -23,10 +19,18 @@ Demos:
 - `Rolling Updates <2_demo_rolling_updates>`_
 - `Blue Green <3_demo_bluegreen>`_
 - `Canary <4_demo_canary>`_
-- `Micro-service implementation with Golang <demo>`_ based on `missy <https://github.com/microdevs/missy>`_
+- `Micro-service implementation with Golang <demo>`_ with `missy <https://github.com/microdevs/missy>`_
 - `Micro-service implementation with .net core <demo_net>`_. Contribution from `Paweł Ruciński <https://github.com/meanin>`_.
 
 Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6463041131910352896>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
+Questions, Feedback? Let me know at wojciech.barczynski@smacc.io.
+
+
+So far, I presented this material at: `Pizza&Tech meetup in Wroclaw <https://www.meetup.com/meetup-group-nGBiendv/events/255191675/>`_ and -- the shorter version -- on `Golang Warsaw Meetup <https://www.meetup.com/Golang-Warsaw/events/255260613/>`_ and `DevOps Warsaw Meetup at Ocado <https://www.meetup.com/Wroclaw-DevOps-Meetup/events/255394680/>`_. Previous versions:
+ 
+- Pizza&Tech meetup in Wroclaw - `LinkedIN Slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
+- Golang Warsaw meetup - `pdf export <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes/tree/meetup_golang_warsaw_2018/slides_short>`_
+
 
 How to build your component
 ===========================
@@ -69,7 +73,7 @@ Graceful shutdown
 - handling SIGTERM
 - ``health`` and ``ready`` implementation
 
-Check `demo <demo/>`_.
+Check `demo <demo/>`_ and `demo_net <demo_net/>`_.
 
 Looking for a Java implementation, check `Mateusz Dyminski talk <https://github.com/mateuszdyminski/zero>`_.
 

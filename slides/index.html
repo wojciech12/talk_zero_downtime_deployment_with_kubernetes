@@ -37,63 +37,59 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h3>Deployment strategies for your micro-service with k8s</h3>
+					<h3>Zero downtime deployment strategies with k8s</h3>
 
 					<img src="img/logo_kubernetes.svg" class="center-block" style="background-color:white;border:0;width: 30%"/>
-				<h5>+ how to prepare your service</h5>
+					<h5>+ how to prepare your service</h5>
 					<br />
 					<small>Wojciech Barczynski - SMACC.io | Hypatos.ai<br />Listopad 2018</small>
 				</section>
 
-								<section>
-									<h3>Wojciech Barczyński</h3>
-									<div class="container">
-										<div class="row">
-											<div class='col-md-8'>
-												<ul>
-													<li>Lead Software Engineer <br />&amp; System Engineer</li>
-													<li>Interests:<br />working software</li>
-													<li>Hobby:<br />teaching software engineering</li>
-												</ul>
-											</div>
-											<div class='col-md-4'>
-												<img style="padding:12px" src="img/smacc/logo_smacc.png" />
-											</div
-										</div>
-									</section>
+				<section>
+					<h3>Wojciech Barczyński</h3>
+					<div class="container">
+						<div class="row">
+							<div class='col-md-8'>
+								<ul>
+									<li>Lead Software Engineer <br />&amp; System Engineer</li>
+									<li>Interests:<br />working software</li>
+									<li>Hobby:<br />teaching software engineering and programming</li>
+								</ul>
+							</div>
+							<div class='col-md-4'>
+								<img style="padding:12px" src="img/smacc/logo_smacc.png" />
+							</div>
+						</div>
+				</section>
 
-								<section>
-									<h3>Background</h3>
-									<ul>
-										<li>ML FinTech ➡ micro-services and k8s</li>
-										<li>Before:<br />1 z 10 Indonesian mobile e-commerce (Rocket Internet)</li>
-										<li>Spent 3.5y with Openstack, 1000+ nodes, 21 data centers</li>
-										<li>I do not like INFRA :D</li>
-									</ul>
-								</section>
+				<!--
+					Tell me a story
+				-->
+				<section>
+					<h3>Story</h3><!-- Dude, why should I listen to you? -->
+					<p>Go + Kubernetes</p>
+						<ul>
+							<li><b>SMACC</b> - Fintech / ML - [10.2017- ...]</li>
+							<li><b>Lyke</b> - Mobile Fashion app - [12.2016, 07.2017]</li>
+						</ul>
+				</section>
 
-								<!--
-									Tell me a story
-								-->
-								<section>
-									<h3>Story</h3><!-- Dude, why should I listen to you? -->
-										<ul>
-											<li>Lyke - [12.2016 - 07.2017]</li>
-											<li>SMACC - [10.2017 - present]</li>
-										</ul>
-								</section>
+				<section data-background="img/intro/company_welcome.png" data-background-repeat="" data-background-size="100%">
+				</section>
 
-<section>
-	<h3>Agenda.</h3>
-	<ul>
-		<li>Mikroserwises</li>
-		<li>Dlaczego kubernetes?</li>
-		<li>Strategie deploymentu</li>
-		<li>Jak przygotować mikroserwis?</li>
-	</ul>
-</section>
+				<section data-background="img/intro/my_experience.png" data-background-repeat="" data-background-size="100%">
+				</section>
 
-<section data-markdown>
+				<!-- section>
+					<h3>Agenda</h3>
+					<ul>
+						<li>Key Kubernetes Concepts</li>
+						<li>How to prepare your service</li>
+						<li>Deployment strategies</li>
+					</ul>
+				</section -->
+
+<!-- section data-markdown>
 	<script type="text/template">
 ### Micro-services
 
@@ -102,9 +98,9 @@
 - Scalling the products
 
 	</script>
-</section>
+</section -->
 
-<section data-markdown>
+<!-- section data-markdown>
 	<script type="text/template">
 ### Micro-services
 
@@ -113,9 +109,9 @@
 - Self-aware
 
 	</script>
-</section>
+</section -->
 
-<section data-markdown>
+<!-- section data-markdown>
 	<script type="text/template">
 ### 12Factor App
 
@@ -124,9 +120,9 @@
 - Low TCO
 - Easy to manage
 	</script>
-</section>
+</section -->
 
-<section data-markdown>
+<!-- section data-markdown>
 	<script type="text/template">
 ### Micro-services
 
@@ -136,9 +132,9 @@
 - <i>/info</li>
 
 	</script>
-</section>
+</section -->
 
-<section data-markdown>
+<!-- section data-markdown>
 	<script type="text/template">
 ### Micro-services
 
@@ -147,15 +143,15 @@
 - Every git repos looks familiar
 - Might be in different tech
 	</script>
-</section>
+<!\/section -->
 
-<section data-markdown>
+<!-- section data-markdown>
 	<script type="text/template">
 ### Micro-services
 
 - Not a silver bullet :)
 	</script>
-</section>
+</section -->
 
 <!--
 Domen boundary
@@ -171,64 +167,82 @@ Monolits
 Small services
 -->
 
+<section data-background="img/intro/black_box.png" data-background-repeat="" data-background-size="100%">
+</section>
+
+<section data-background="img/intro/lingua_franca.png" data-background-repeat="" data-background-size="100%">
+</section>
+
 				<!--
 					Intro
 				-->
 				<section>
-					<h4>Kubernetes</h4>
-					<img src="img/logo_kubernetes.svg" class="center-block" style="background-color:white;border:0;width: 30%"/>
+					<h3>Kubernetes</h3>
+
+					<div class="container">
+						<div class="row">
+							<div class='col-md-8'>
+								<ul>
+									<li>Learn-as-you-go</li>
+									<li>Battery for 12factor apps</li>
+									<li>...app must be smarter</li>
+								</ul>
+							</div>
+							<div class='col-md-4'>
+								<img src="img/logo_kubernetes.svg" class="center-block" style="padding:12px"  style="background-color:white;border:0;width: 30%"/>
+							</div>
+						</div>
 				</section>
 
-								<section>
-									<h3>Why?</h3>
-									<ul>
-										<li>Admistracja jest trudna i kosztowna</li>
-										<li>Virtualne Maszyny, ansible, salt, etc.</li>
-										<li>Za dużo ruchomych części</li>
-										<li>Nie kończąca się standaryzacja</li>
-									</ul>
-								</section>
+				<!-- section>
+					<h3>Why?</h3>
+					<ul>
+						<li>Operations and Admin is hard</li>
+						<li>A lot of moving parts</li>
+					</ul>
+				</section -->
 
-								<section>
-									<h3>Mikroserwisy AAA!</h3>
-									<img src="img/rubber_duck_sea.jpg" style="width:85%"/>
-								</section>
+				<!-- section>
+					<h3>Mikroserwisy AAA!</h3>
+					<img src="img/rubber_duck_sea.jpg" style="width:85%"/>
+				</section -->
 
-								<section>
-									<h3>Why?</h3>
-									<ul>
-										<li>Cloud is not so cheap - $$$</li>
-									</ul>
-								</section>
+				<!-- section>
+					<h3>Why?</h3>
+					<ul>
+						<li>Cloud is not so cheap - $$$</li>
+					</ul>
+				</section -->
 
-								<section>
-									<h3>Imagine</h3>
-									<ul>
-										<li>do not need to think about IaaS</li>
-										<li>no login on a VM</li>
-										<li>less gold plating your CI / CD ...</li>
-										<li>DC as a black box</li>
-									</ul>
-								</section>
+				<!-- section>
+					<h3>Imagine</h3>
+					<ul>
+						<li>do not need to think about IaaS</li>
+						<li>no login on a VM</li>
+						<li>less gold plating your CI / CD ...</li>
+						<li>DC as a black box</li>
+					</ul>
+				</section -->
 
-								<section>
-									<h4>Kubernetes</h4>
-									<ul>
-										<li>Container management</li>
-										<li>Service and application mindset</li>
-										<li>Simple Semantic*</li>
-										<li>Independent from IaaS provider</li>
-									</ul>
-								</section>
+				<!-- section>
+					<h4>Kubernetes</h4>
+					<ul>
+						<li>Container management</li>
+						<li>Service and application mindset</li>
+						<li>Simple Semantic*</li>
+						<li>Independent from IaaS provider</li>
+					</ul>
+				</section -->
 
-								<section>
-									<h4>Kubernetes</h4>
-									<ul>
-										<li>Batteries for your 12factory apps</li>
-										<li>Service discovery, meta-data support</li>
-										<li>Utilize resources to nearly 100%</li>
-								</ul>
-								</section>
+				<!-- section>
+					<h4>Kubernetes</h4>
+					<ul>
+						<li>Data Center as black box</li>
+						<li>Batteries for your 12factory apps</li>
+						<li>Service discovery, meta-data support</li>
+
+					</ul>
+				</section -->
 
 				<!--
 				## Why Kubernetes?
@@ -243,151 +257,209 @@ Small services
 				- Let you to, almost forget, about the infrastructure
 				-->
 
-								<!-- section>
-									<h4>Ostatnio</h4>
-									<ul>
-										<li>Platfroma integracyjne - patrz SAP</li>
-									</ul>
-								</section -->
 
-												<!-- section data-markdown>
-													<script type="text/template">
-								<h5>Data center as a Black box</h5>
-													</script>
-												</section -->
-												<!-- img src="img/kubernetes_logo.svg" style="background-color:white;width:60%" / -->
+				<section>
+					<h3>Kubernetes</h3>
+					<img src="img/k8s_intro.svg" style="width:90%"/>
+					<small><code>make docker_push; kubectl create -f app-srv-dpl.yaml</code></small>
+				</section>
 
-												<section>
-													<h3>Kubernetes</h3>
-													<img src="img/k8s_intro.svg" style="width:90%"/>
-													<small><code>make docker_push; kubectl create -f app-srv-dpl.yaml</code></small>
-												</section>
+				<section>
+					<h3>Scale up! Scale down!</h3>
+					<img src="img/k8s_intro_scale_up.svg" style="width:90%"/>
+					<small><code>kubectl --replicas=3 -f app-srv-dpl.yaml</code></small>
+				</section>
 
-												<section>
-													<h3>Scale up! Scale down!</h3>
-													<img src="img/k8s_intro_scale_up.svg" style="width:90%"/>
-													<small><code>kubectl --replicas=3 -f app-srv-dpl.yaml</code></small>
-												</section>
+				<!-- section>
+					<h3>Scale up! Scale down!</h3>
+					<img src="img/k8s_intro_scale_down.svg" style="width:90%"/>
+					<small><code>kubectl --replicas=1 -f app-srv-dpl.yaml</code></small>
+				</section -->
 
-												<section>
-													<h3>Scale up! Scale down!</h3>
-													<img src="img/k8s_intro_scale_down.svg" style="width:90%"/>
-													<small><code>kubectl --replicas=1 -f app-srv-dpl.yaml</code></small>
-												</section>
+				<!-- section data-markdown>
+					<script type="text/template">
+### Rolling updates!
 
-												<section data-markdown>
-													<script type="text/template">
-								## Rolling updates!
+<img src="img/k8s_updates_rolling_1.svg" style="width:80%"/>
+<small><code>kubectl set image deployment/app app=app:v2.0.0</code></small>
+					</script>
+				</section -->
 
-								<img src="img/k8s_updates_rolling_1.svg" style="width:80%"/>
-								<small><code>kubectl set image deployment/app app=app:v2.0.0</code></small>
-													</script>
-												</section>
+				<!-- section data-markdown>
+					<script type="text/template">
+### Rolling updates!
 
-												<section data-markdown>
-													<script type="text/template">
-								## Rolling updates!
+<img src="img/k8s_updates_rolling_2.svg" style="width:80%"/>
+<small><code>kubectl set image deployment/app app=app:v2.0.0</code></small>
+					</script>
+				</section -->
 
-								<img src="img/k8s_updates_rolling_2.svg" style="width:80%"/>
-								<small><code>kubectl set image deployment/app app=app:v2.0.0</code></small>
-													</script>
-												</section>
-
-												<!-- RollingUpdateStrategy -->
-												<!-- maxUnavailable -->
-												<section data-markdown>
-													<script type="text/template">
-## Rolling updates!
+				<!-- RollingUpdateStrategy -->
+				<!-- maxUnavailable -->
+				<!-- section data-markdown>
+					<script type="text/template">
+### Rolling updates!
 
 <img src="img/k8s_updates_rolling_3.svg" style="width:80%"/>
 <small><code>kubectl set image deployment/app app=app:v2.0.0</code></small>
-													</script>
-												</section>
+					</script>
+				</section -->
 
-												<section data-markdown>
-													<script type="text/template">
-## Resistance!
+				<!-- section data-markdown>
+					<script type="text/template">
+### Resistance / Migration
 
 <img src="img/k8s_ha_resistance_1.svg" style="width:80%">
-													</script>
-												</section>
+					</script>
+				</section-->
 
-												<section data-markdown>
-													<script type="text/template">
-## Resistance!
+				<!-- section data-markdown>
+					<script type="text/template">
+### Resistance / Migration
 
 <img src="img/k8s_ha_resistance_2.svg" style="width:80%">
-													</script>
-												</section>
+					</script>
+				</section -->
 
-												<section data-markdown>
-													<script type="text/template">
-								## Resistance!
+				<!-- section data-markdown>
+					<script type="text/template">
+### Resistance / Migration
 
-								<img src="img/k8s_ha_resistance_3.svg" style="width:80%">
-													</script>
-												</section>
-
-
-
-												<section>
-													<h2>How get user requests?</h2>
-								<img src="img/traefik_architecture.svg" width="90%"/>
-								<small>Ingress Controller</small>
-												</section>
-
-												<section data-markdown>
-													<script type="text/template">
-								### Ingress
-
-								<table>
-									<thread>
-										<tr>
-											<th>Pattern</th><th>Target App Service</th>
-										</tr>
-									</thread>
-									<tbody>
-										<tr>
-											<td>api.smacc.io/v1/users</td><td>users-v1</td>
-										</tr>
-										<tr>
-											<td>api.smacc.io/v2/users</td><td>users-v2</td>
-										</tr>
-										<tr>
-											<td>smacc.io</td><td>web</td>
-										</tr>
-									</tbody>
-								</table>
-													</script>
-												</section>
+<img src="img/k8s_ha_resistance_3.svg" style="width:80%">
+					</script>
+				</section -->
 
 
-																								<section>
-																				<h3>Load Balancing</h3>
-																				<img src="img/k8s_loadbalancing.svg" style="height:100%"/>
-																								</section>
+				<section>
+					<h3>Deployment and Pods</h3>
+					<img src="img/backup_slides/k8s_deployment_and_pods.svg" style="width:80%"/>
+				</section>
+
+				<section>
+					<h3>Deployment.yml</h3>
+
+					<pre><code class="yaml">apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-api
+  labels:
+    app: demo-api
+spec:
+  replicas: 3
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: demo-api
+  template:
+    metadata:
+      labels:
+        app: demo-api
+    spec:
+      containers:
+      - name: app
+        image: wojciech11/api-status:1.0.0
+        ports:
+        - containerPort: 80</code></pre>
+				</section>
+
+				<section>
+					<h3>Service and pods</h3>
+					<img src="img/backup_slides/k8s_service_and_pods.svg" style="width:80%" />
+					<p><small>Service matches pods based on labels</small></p>
+				</section>
+
+				<section>
+					<h3>Service.yml</h3>
+
+					<pre><code class="yaml">apiVersion: v1
+kind: Service
+metadata:
+  name: demo-api
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    app: demo-api
+  type: LoadBalancer</code></pre>
+				</section>
+
+				<section>
+					<h4>Basic Concepts</h4>
+					<p><table>
+						<thread>
+							<tr>
+								<th>Name</th><th>Purpose</th><th></th>
+							</tr>
+						</thread>
+						<tbody>
+							<tr>
+								<td>Service</td><td>Interface</td><td>Entry point (Service Name)</td>
+							</tr>
+							<tr>
+								<td>Deployment</td><td>Factory</td><td>How many pods, which pods</td>
+							</tr>
+							<tr>
+								<td>Pod</td><td>Implementation</td><td>1+ docker running</td>
+							</tr>
+						</tbody>
+					</table></p>
+				</section>
 
 
-
-												<section data-markdown>
-													<script type="text/template">
-								## Service Discovery
-
-								- names in DNS: <br /><code>curl http://users/list</code>
-								- labels:<br /><code>name=value</code>
-								- annotations: <br /><code>prometheus.io/scrape: "true"</code>
-													</script>
-												</section>
-
-									<section data-markdown>
-												<script type="text/template">
-												## Service Discovery
-												- loosely couple components
-												- auto-wiring with logging and monitoring
-											</script>
-									</section>
+				<section>
+					<h3>How get user requests?</h3>
+						<img src="img/traefik_architecture.svg" width="90%"/>
+						<small>Ingress Controller</small>
+				</section>
 
 				<section data-markdown>
+					<script type="text/template">
+### Ingress
+
+<table>
+	<thread>
+		<tr>
+			<th>Pattern</th><th>Target App Service</th>
+		</tr>
+	</thread>
+	<tbody>
+		<tr>
+			<td>api.smacc.io/v1/users</td><td>users-v1</td>
+		</tr>
+		<tr>
+			<td>api.smacc.io/v2/users</td><td>users-v2</td>
+		</tr>
+		<tr>
+			<td>smacc.io</td><td>web</td>
+		</tr>
+	</tbody>
+</table>
+					</script>
+				</section>
+
+
+				<section data-markdown>
+					<script type="text/template">
+### Service Discovery<br />and Labeling
+
+- names in DNS: <br /><code>curl http://users/list</code>
+- labels:<br /><code>name=value</code>
+- annotations: <br /><code>prometheus.io/scrape: "true"</code> 
+					</script>
+				</section>
+
+				<!-- section data-markdown>
+					<script type="text/template">
+## Service Discovery
+
+- loosely couple components
+- auto-wiring with logging and monitoring
+					</script>
+				</section -->
+
+				<!-- section data-markdown>
 					<script type="text/template">
 ## Drop-in
 
@@ -396,9 +468,9 @@ Small services
 - audit checks
 - ...
 					</script>
-				</section>
+				</section -->
 
-				<section data-markdown>
+				<!-- section data-markdown>
 					<script type="text/template">
 ### The best part
 
@@ -412,17 +484,49 @@ All live in git:
 
 <p><small>DevOps Culture Dream!</small></p>
 								</script>
-							</section>
+							</section -->
 
 <!--
 
 -->
-<section>
-	<h4>Deployment Strategies</li>
-</section>
 
-<section data-markdown>
-	<script type="text/template">
+<!--
+1) Do kontroli przebiegu rolloutu:
+
+kubectl rollout status deployments nginx
+
+kubectl rollout pause deployments nginx
+
+kubectl rollout resume deployments nginx
+
+kubectl rollout history deployment nginx
+
+2) Do wycofania rolloutu:
+
+kubectl rollout undo deployments nginx
+
+3) Slowing Rollouts to Ensure Service Health:
+
+For deployments, this time to wait is defined by the minReadySeconds parameter:
+...
+spec:
+  minReadySeconds: 60
+...
+Setting minReadySeconds to 60 indicates that the Deployment must wait for 60 seconds after seeing a Pod become healthy before moving on to updating the next Pod.
+
+4) To set the timeout period, the Deployment parameter progressDeadlineSeconds is used:
+...
+spec:
+  progressDeadlineSeconds: 600
+...
+-->
+
+				<section>
+					<h2>Deployment Strategies</h2>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
 ### Strategies
 
 We will see:
@@ -431,11 +535,11 @@ We will see:
 - Rolling updates
 - Blue Green
 - Canary
-				</script>
-			</section>
+					</script>
+				</section>
 
-			<section data-markdown>
-				<script type="text/template">
+				<section data-markdown>
+					<script type="text/template">
 ### Other
 
 We will not cover:
@@ -443,22 +547,22 @@ We will not cover:
 - Feature toggles
 - A/B like
 - Shadow deployment
-							</script>
-						</section>
+					</script>
+				</section>
 
-						<section data-markdown>
-							<script type="text/template">
+				<section data-markdown>
+					<script type="text/template">
 ### First the homework
 
 Need to support:
 
 - liveness - am I dead?
 - readiness - can I serve requests?
-										</script>
-									</section>
+					</script>
+				</section>
 
-									<section data-markdown>
-										<script type="text/template">
+				<section data-markdown>
+					<script type="text/template">
 ### Kube Liveness Probe
 
 <pre><code>livenessProbe:
@@ -473,17 +577,17 @@ Need to support:
   timeoutSeconds: 18
   successThreshold: 1
   failureThreshold: 3</code></pre>
-										</script>
-</section>
+					</script>
+				</section>
 
-<section data-markdown>
-	<script type="text/template">
+				<section data-markdown>
+					<script type="text/template">
 ### Liveness Probe
 
 - our pod gets restarted
 - too many restarts -> CrashLoop
-				</script>
-			</section>
+					</script>
+				</section>
 
 <section data-markdown>
 	<script type="text/template">
@@ -503,11 +607,50 @@ Need to support:
 					<script type="text/template">
 ### Your app should on stop
 
-- when we get SIGTERM signal
-- app gives 500 on readinessProbe
-- app does not receive new requests
-- app graceful shutdown
-- kuberenetes forces kill if 30 limit exceeded
+1. we get SIGTERM signal
+
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### Your app should on stop
+
+1. we get SIGTERM signal
+2. app gives 500 on readinessProbe
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### Your app should on stop
+
+1. we get SIGTERM signal
+2. app gives 500 on readinessProbe
+3. k8s does not send more requests
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### Your app should on stop
+
+1. we get SIGTERM signal
+2. app gives 500 on readinessProbe
+3. k8s does not send more requests
+4. app shuts down gracefully
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### Your app should on stop
+
+1. we get SIGTERM signal
+2. app gives 500 on readinessProbe
+3. k8s does not send more requests
+4. app shuts down gracefully
+5. kuberenetes forces kill if 30s limit exceeded
 					</script>
 				</section>
 
@@ -519,6 +662,32 @@ Implement readiness for:
 
 - ML Model-based components
 - slow starting time
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+
+### Demo Service Implementation
+
+- <a href="https://github.com/microdevs/missy/blob/add_support_for_readiness_probe/service/service.go#L169-L172">graceful shutdown</a>
+- <a href="https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes/tree/golang_waw_20/demo">demo service</a>
+					</script>
+				</section>
+
+				<section data-markdown>
+					<script type="text/template">
+### Graceful shutdown
+
+From <a href="https://github.com/microdevs/missy">missy</a>:
+
+<pre><code class="gos">func (s *Service) prepareShutdown(h Server) {
+	signal.Notify(s.Stop, os.Interrupt, syscall.SIGTERM)
+	<-s.Stop
+	s.StatusNotReady()
+	shutdown(h)
+}
+</code></pre>
 					</script>
 				</section>
 
@@ -596,29 +765,28 @@ Implement readiness for:
 					</script>
 				</section>
 
-
 				<section data-markdown>
 					<script type="text/template">
 ### Demo - green/blue
 <img src="img/deployment_strategies/bluegreen_1.svg" style="width:100%"/>
-</script>
-</section>
+					</script>
+				</section>
 
-<section data-markdown>
-	<script type="text/template">
+				<section data-markdown>
+					<script type="text/template">
 ### Demo - green/blue
 <img src="img/deployment_strategies/bluegreen_2.svg" style="width:100%"/>
-</script>
-</section>
+					</script>
+				</section>
 
-<section data-markdown>
-	<script type="text/template">
+				<section data-markdown>
+					<script type="text/template">
 ### Demo - green/blue
 
 <code><pre>kubectl patch service api-status \
     -p '{"spec":{"selector": {"label": "green"} }}'</code></pre>
-	</script>
-</section>
+					</script>
+				</section>
 
 				<section data-markdown>
 					<script type="text/template">
@@ -666,7 +834,7 @@ Implement readiness for:
 					<script type="text/template">
 ### Demo - canary
 
-<img src="img/deployment_strategies/canary_4.svg" style="width:100%"/>
+- manually
 					</script>
 				</section>
 
@@ -683,29 +851,76 @@ kubectl scale --replicas=2 deploy/api-status-nginx-green</code></pre>
 </script>
 </section>
 
-				<section data-markdown>
-					<script type="text/template">
-### Demo - canary
+<section data-markdown>
+	<script type="text/template">
+### Traefik
 
-- manually
-- with help of Traefik / Istio / ...
-					</script>
-				</section>
+<pre><code class="yaml">apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    traefik.ingress.kubernetes.io/service-weights: |
+      my-app: 99%
+      my-app-canary: 1%
+  name: my-app
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: my-app
+          servicePort: 80
+        path: /
+      - backend:
+          serviceName: my-app-canary
+          servicePort: 80
+        path: /</code></pre>
+
+<p><small><a href="https://github.com/containous/traefik/blob/master/docs/user-guide/kubernetes.md#traffic-splitting">traffic-splitting</a></small></p>
+
+	</script>
+</section>
+
+<section data-markdown>
+	<script type="text/template">
+### Istio
+
+<pre><code class="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: helloworld
+spec:
+  hosts:
+    - helloworld
+  http:
+  - route:
+    - destination:
+        host: helloworld
+        subset: v1
+      weight: 90
+    - destination:
+        host: helloworld
+        subset: v2
+      weight: 10</code></pre>
+
+<p><small><a href="https://istio.io/docs/tasks/traffic-management/traffic-shifting/">traffic shifting with Istio</a></small></p>
+	</script>
+</section>
 
 				<section data-markdown>
 					<script type="text/template">
 ### Summary
 
-- kubernetes simple semantic
-- easy deployment of your applications
-- will work for any application type
+- learn-as-you go <3
+- easy to implement complex strategies
+- see <code>kubectl rollout</code> and <code>minReadySeconds</code> for more control
 					</script>
 				</section>
 
 				<section data-background="img/smacc_header_IT_source.jpg" data-background-repeat="" data-background-size="100%" data-background-position="bottom"
 				style="position: relative; top:0">
-					<h4>Dziękuję. Pytania?</h4>
-					<p>ps. We are hiring.</p><!-- Developers, Frontend, System Engineers -->
+					<h4>Thank you. Questions?</h4>
+					<p><small>https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes</small></p>
 				</section>
 
 				<section>
@@ -798,159 +1013,105 @@ kubectl scale --replicas=2 deploy/api-status-nginx-green</code></pre>
 
 				<section data-markdown>
 					<script type="text/template">
-						#### Challenges
+#### Challenges
 
-						- 50+ VMs in Amazon, 1 VM - 1 App, idle machine
-						- Puppet, hilarious (manual) deployment process
-						- Fear
-						- Forgotten components
-						- sometimes performance issues
+- 50+ VMs in Amazon, 1 VM - 1 App, idle machine
+- Puppet, hilarious (manual) deployment process
+- Fear
+- Forgotten components
+- sometimes performance issues
 					</script>
 				</section>
 
-<!--
-SMACC
--->
-<section>
-	<img src="img/smacc/logo_smacc_hypatos.png" width="50%" />
-</section>
+				<!--
+				SMACC
+				-->
+				<section>
+					<img src="img/smacc/logo_smacc_hypatos.png" width="50%" />
+				</section>
 
-<section>
-	<h2>SMACC</h2>
-	<div class="container">
-		<div class="row">
-			<div class='col-md-14'>
-				<ul>
-					<li>Machine Learning FinTech</li>
-					<li>SaaS and API platform</li>
-					<li>From Enterprise (Deutsche Bank, AoK) to SME</li>
-					<li>Well-known FinTech Startup in Germany</li>
-				</ul>
-			</div>
-		</div>
-		<div class="row">
-			<div class='col-md-14'>
-				<img src="img/smacc/produktfoto-full_service.jpg" />
-			</div>
-		</div>
-	</div>
-</section>
+				<section>
+					<h2>SMACC</h2>
+					<div class="container">
+						<div class="row">
+							<div class='col-md-14'>
+								<ul>
+									<li>Machine Learning FinTech</li>
+									<li>SaaS and API platform</li>
+									<li>From Enterprise (Deutsche Bank, AoK) to SME</li>
+									<li>Well-known FinTech Startup in Germany</li>
+								</ul>
+							</div>
+						</div>
+						<div class="row">
+							<div class='col-md-14'>
+								<img src="img/smacc/produktfoto-full_service.jpg" />
+							</div>
+						</div>
+					</div>
+				</section>
 
-				<!-- section>
-					<h3>Background</h3>
+				<section>
+					<h3>Story</h3>
 					<ul>
-				<li>Experience with AWS and GCP</li>
-				<li>I do not like INFRA :D</li>
-			</ul>
-		</section -->
+						<li>Legacy on AWS, experiments with AWS ECS :/ </li>
+						<li>Self-hosted K8S on ProfitBricks</li>
+						<li>Get to Microsoft ScaleUp, welcome Azure</li>
+						<li>Luckily - Azure-Kubernetes-Service</li>
+					</ul>
+				</section>
 
-<!-- section>
-<h2>Kubernetes @ Azure</h2>
-</section -->
+				<section>
+					<h3>Difference &#x2620;</h3>
+					<ul>
+						<li>Two teams in Berlin and Warsaw</li>
+						<li>Me in Warsaw</li>
+					</ul>
+				</section>
 
-<!-- section>
-	<h2>Options</h2>
-<ul>
-	<li>AKS - managed</li>
-	<li>ACS - installation wizard</li>
-	<li>Your own installation with Installer</li>
-</ul>
-</section -->
+				<section data-markdown>
+					<script type="text/template">
+#### Approach
 
-<!-- section>
-	<h2>AKS</h2>
-<ul>
-	<li>GKE for Google</li>
-	<li>EKS or Fargate for Amazon</li>
-</ul>
-</section -->
+- Simplify, Simplify
+- Hide K8S magic
+- <code>git tag</code> driven Continoues Deployment
+					</script>
+				</section>
 
-<section>
-	<h3>Story</h3>
-<ul>
-	<li>Legacy on AWS, experiments with AWS ECS :/ </li>
-	<li>Self-hosted K8S on ProfitBricks</li>
-	<li>Get to Microsoft ScaleUp, welcome Azure</li>
-	<li>Luckily - Azure-Kubernetes-Service</li>
-</ul>
-</section>
+				<section>
+					<h1>Kubernetes Concepts+</h1>
+				</section>
 
-<section>
-	<h3>Difference &#x2620;</h3>
-	<ul>
-		<li>Two teams in Berlin and Warsaw</li>
-		<li>Me in Warsaw</li>
-	</ul>
-</section>
+				<section>
+				<h3>Pods</h3>
+				<div class="container">
+					<div class="row">
+						<div class='col-md-6'>
+							<ul>
+								<li>See each other on localhost</li>
+								<li>Live and die together</li>
+								<li>Can expose multiple ports</li>
+							</ul>
+						</div>
+						<div class='col-md-5'>
+							<img src="img/backup_slides/k8s_pod.svg" style="width:90%" />
+						</div>
+					</div>
+				</div>
+				</section>
 
-<section data-markdown>
-	<script type="text/template">
-		#### Approach
+				<section>
+					<h3>Side-cars</h3>
+					<img src="img/backup_slides/k8s_pod_2.svg" style="width:90%" />
+				</section>
 
-		- Simplify, Simplify
-		- Hide K8S magic
-		- <code>git tag</code> driven Continoues Deployment
-	</script>
-</section>
-
-			<section>
-				<h1>Kubernetes Concepts</h1>
-			</section>
-
-		<section>
-			<img src="img/backup_slides/k8s_deployment_and_pods.svg" style="width:90%"/>
-		</section>
-
-		<section>
-			<img src="img/backup_slides/k8s_service_and_pods.svg" style="width:90%" />
-		</section>
-
-		<section>
-	<h3>Pods</h3>
-	<div class="container">
-		<div class="row">
-			<div class='col-md-6'>
-				<ul>
-					<li>See each other on localhost</li>
-					<li>Live and die together</li>
-					<li>Can expose multiple ports</li>
-				</ul>
-			</div>
-			<div class='col-md-5'>
-				<img src="img/backup_slides/k8s_pod.svg" style="width:90%" />
+				<section>
+					<h3>Load Balancing</h3>
+					<img src="img/k8s_loadbalancing.svg" style="height:100%"/>
+				</section>
 			</div>
 		</div>
-	</div>
-</section>
-
-<section>
-	<h3>Side-cars</h3>
-	<img src="img/backup_slides/k8s_pod_2.svg" style="width:90%" />
-</section>
-
-	<section>
-				<h4>Basic Concepts</h4>
-				<p><table>
-					<thread>
-						<tr>
-							<th>Name</th><th>Purpose</th><th></th>
-						</tr>
-					</thread>
-					<tbody>
-						<tr>
-							<td>Service</td><td>Interface</td><td>Entry point (Service Name)</td>
-						</tr>
-						<tr>
-							<td>Deployment</td><td>Factory</td><td>How many pods, which pods</td>
-						</tr>
-						<tr>
-							<td>Pod</td><td>Implementation</td><td>1+ docker running</td>
-						</tr>
-					</tbody>
-				</table></p>
-			</section>
-		</div>
-	</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
