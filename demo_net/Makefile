@@ -15,3 +15,7 @@ docker_deploy: docker_build
 
 docker_run_echo:
 	@echo "docker run --name $(SERVICE_NAME) -p 8090:80 -d $(DOCKER_IMAGE_NAME):1.0.0 ";
+
+clean:
+	kubectl delete -f kube-deployment.yaml; \
+	kubectl delete -f kube-service.yaml;
