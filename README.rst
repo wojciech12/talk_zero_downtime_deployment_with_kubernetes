@@ -22,7 +22,7 @@ Demos:
 - `Micro-service implementation with Golang <demo>`_ with `missy <https://github.com/microdevs/missy>`_
 - `Micro-service implementation with .net core <demo_net>`_. Contribution from `Paweł Ruciński <https://github.com/meanin>`_.
 
-Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6463041131910352896>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
+Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6478627773912006656>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
 Questions, Feedback? Let me know at wojciech.barczynski@smacc.io.
 
 
