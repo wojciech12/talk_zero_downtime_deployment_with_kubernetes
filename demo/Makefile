@@ -20,3 +20,18 @@ docker_deploy: docker_build
 
 docker_run_echo:
 	@echo "docker run --name $(SERVICE_NAME) -p 8090:8090 -d ${DOCKER_PROJECT_ID}/$(SERVICE_NAME):1.0.0 ";
+
+apply:
+	kubectl apply -f kube-deployment.yaml
+	kubectl apply -f kube-service.yaml
+
+watch_curl:
+	export SVC_PORT=$$(kubectl get service zero-demo --output='jsonpath="{.spec.ports[0].nodePort}"' | tr -d '"') ; \
+	watch -n0.3 -x curl -s $$(minikube ip):$${SVC_PORT}/ready
+
+watch_get_po:
+	watch -n0.5 -x kubectl get po
+
+delete:
+	kubectl delete -f kube-deployment.yaml || true
+	kubectl delete -f kube-service.yaml

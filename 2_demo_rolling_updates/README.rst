@@ -33,7 +33,7 @@ With minikube
   watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}
 
   # in another terminal window
-  watch -n1.0 -x kubectl get po
+  watch -n0.3 -x kubectl get po
 
   # upgrade
   kubectl set image  deployment/demo-api app=wojciech11/api-status:2.0.0

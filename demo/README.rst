@@ -47,6 +47,7 @@ Kubernetes
   curl $(minikube ip):${SVC_PORT}/ready
 
   watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}/ready
+  watch -n0.3 -x kubectl get po
 
   kubectl exec -it zero-demo-ff967d59f-wjldc   /bin/bash
 

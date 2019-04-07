@@ -45,11 +45,12 @@ Notice: it causes downtime.
   # see the changes from the user perspective:
   watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}
 
+  # observe 
+  watch -n0.3 -x kubectl get po
+
   # let's get from 1.0.0 to 2.0.0
   kubectl set image  deployment/demo-api app=wojciech11/api-status:2.0.0
 
-  # observe 
-  kubectl get po
 
   # notice: beacause of the initialDelaySeconds readiness and liveness probes
   # we need to wait longer

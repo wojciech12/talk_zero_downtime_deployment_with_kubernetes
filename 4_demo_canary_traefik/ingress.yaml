@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.rule.type: PathPrefixStrip
+    traefik.ingress.kubernetes.io/service-weights: |
+      api-status-v1: 0%
+      api-status-v2: 100%
+  name: my-api-status
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: api-status-v1
+          servicePort: 80
+        path: /status
+      - backend:
+          serviceName: api-status-v2
+          servicePort: 80
+        path: /status

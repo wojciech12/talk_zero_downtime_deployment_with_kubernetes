@@ -4,13 +4,12 @@ Canary
 
 Several strategies with Treafik, Istio,... below an example of a manual deployment.
 
-Use k8s configurations `the blue-green deployment strategy <../3_demo_bluegreen/>`_.
+Use the k8s configuration from `the blue-green deployment strategy <../3_demo_bluegreen/>`_.
 
 Assuming the blue is our prod and green is our canary:
 
 ::
 
-  
   kubectl scale --replicas=3 deploy/api-status-nginx-blue
   kubectl scale --replicas=0 deploy/api-status-nginx-green
 
@@ -25,20 +24,19 @@ Assuming the blue is our prod and green is our canary:
   kubectl scale --replicas=3 deploy/api-status-nginx-blue
   kubectl scale --replicas=1 deploy/api-status-nginx-green
 
-  # no errors, let's continoue
+  # no errors, let's continue
   kubectl scale --replicas=2 deploy/api-status-nginx-blue
   kubectl scale --replicas=2 deploy/api-status-nginx-green
 
-  # no errors, let's continoue
+  # no errors, let's continue
   kubectl scale --replicas=1 deploy/api-status-nginx-blue
   kubectl scale --replicas=3 deploy/api-status-nginx-green
 
-  # no errors, let's continoue
+  # no errors, let's continue
   kubectl scale --replicas=0 deploy/api-status-nginx-blue
   kubectl scale --replicas=3 deploy/api-status-nginx-green
 
   # now we can delete the deployment blue
-
 
 ::
 

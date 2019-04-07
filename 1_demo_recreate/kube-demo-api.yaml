@@ -25,8 +25,8 @@ spec:
           httpGet:
             path: /
             port: 80
-          initialDelaySeconds: 5
-          periodSeconds: 5
+          initialDelaySeconds: 3
+          periodSeconds: 3
         readinessProbe:
           httpGet:
             path: /
@@ -34,5 +34,5 @@ spec:
 
           # Intial delay is set to a high value to have a better
           # visibility of the ramped deployment
-          initialDelaySeconds: 10
-          periodSeconds: 5
+          initialDelaySeconds: 5
+          periodSeconds: 3

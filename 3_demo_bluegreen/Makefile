@@ -22,3 +22,15 @@ docker_stop_and_rm_echo:
 	for label in green blue ; do \
 		echo "docker stop $(SERVICE_NAME)-$${label}; docker rm $(SERVICE_NAME)-$${label}"; \
 	done
+
+apply:
+	kubectl apply -f kube-nginx-blue.yaml
+	kubectl apply -f kube-nginx-green.yaml
+	kubectl apply -f kube-service-status.yaml
+
+watch_curl:
+	 export SVC_PORT=$$(kubectl get service api-status --output='jsonpath="{.spec.ports[0].nodePort}"' | tr -d '"') ; \
+	 watch -n0.3 -x curl -s $$(minikube ip):$${SVC_PORT}
+
+watch_get_po:
+	 watch -n0.3 -x kubectl get po

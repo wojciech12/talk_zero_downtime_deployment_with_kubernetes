@@ -16,12 +16,7 @@ Istio:
     version: v2.0.0
     weight: 10
 
-Traefik (see `docs <https://docs.traefik.io/configuration/backends/kubernetes/>`_):
+Better in App:
 
-::
-
-  service_backend1: 12.50%
-  service_backend2: 12.50%
-  service_backend3: 75 # Same as 75%, the percentage sign is optional
-
-Notice: I would recommend handling any A/B in your application. It is too vital to your business.
+- https://github.com/rocket-internet-berlin/RocketBucket
+- BaaS - google firebase

@@ -10,8 +10,7 @@ The demos cover recreate, rolling updates, blue-green, and canary deployment str
 
 Slides:
 
-- `LinkedIn SlideShare <https://www.slideshare.net/WojciechBarczyski/zero-downtime-deployment-of-microservices-with-kubernetes>`_
-- `Pdf <slides_short/index.pdf>`_ (source: `slides/ <slides/>`_)
+- `Pdf <slides/index.pdf>`_ (source: `slides/ <slides/>`_)
 
 Demos:
 
@@ -19,18 +18,25 @@ Demos:
 - `Rolling Updates <2_demo_rolling_updates>`_
 - `Blue Green <3_demo_bluegreen>`_
 - `Canary <4_demo_canary>`_
+- `Canary with Traefik <4_demo_canary_traefik>`_
 - `Micro-service implementation with Golang <demo>`_ with `missy <https://github.com/microdevs/missy>`_
 - `Micro-service implementation with .net core <demo_net>`_. Contribution from `Paweł Ruciński <https://github.com/meanin>`_.
 
-Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6478627773912006656>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
-Questions, Feedback? Let me know at wojciech.barczynski@smacc.io.
+Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk <https://www.linkedin.com/feed/update/urn:li:activity:6515534719910768640>`_ or a *STAR* to `this github repo <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes>`_.
 
+Questions, Feedback? Let me know at wojciech.barczynski@hypatos.ai.
 
-So far, I presented this material at: `Pizza&Tech meetup in Wroclaw <https://www.meetup.com/meetup-group-nGBiendv/events/255191675/>`_ and -- the shorter version -- on `Golang Warsaw Meetup <https://www.meetup.com/Golang-Warsaw/events/255260613/>`_ and `DevOps Warsaw Meetup at Ocado <https://www.meetup.com/Wroclaw-DevOps-Meetup/events/255394680/>`_. Previous versions:
- 
-- Pizza&Tech meetup in Wroclaw - `LinkedIN Slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
-- Golang Warsaw meetup - `pdf export <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes/tree/meetup_golang_warsaw_2018/slides_short>`_
+Start
+=====
 
+You can use a hosted kubernetes, in the demo I assume we are on minikube:
+
+::
+
+  minikube start
+  kubectl config use-context minikube
+
+Why minikube? I want to make it easy for you to start.
 
 How to build your component
 ===========================
@@ -88,8 +94,17 @@ To Be Added before the next talk:
 4. shadow deployment with (most probably) Istio
 5. feature switch with Golang
 6. A/B deployment with Golang
-7. Weight-based routing of requests with Traefik
-8. Python example.
+7. Python example.
+8. Java example.
+
+History
+=======
+
+Previous versions of the talk:
+ 
+- Pizza&Tech meetup in Wroclaw - `LinkedIN Slideshare <https://www.slideshare.net/WojciechBarczyski/zero-deployment-of-microservices-with-kubernetes/>`_
+- `DevOps Warsaw Meetup at Ocado <https://www.meetup.com/Wroclaw-DevOps-Meetup/events/255394680/>`_
+- Golang Warsaw meetup - `pdf export <https://github.com/wojciech12/talk_zero_downtime_deployment_with_kubernetes/tree/meetup_golang_warsaw_2018/slides_short>`_
 
 Related Work
 ============

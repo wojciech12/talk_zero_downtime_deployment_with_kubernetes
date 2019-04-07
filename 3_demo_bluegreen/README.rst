@@ -27,7 +27,6 @@ Demo
   # our first version: blue
   kubectl apply -f kube-nginx-blue.yaml
 
-
   # let's connect to our blue 
 
   # get the IP
@@ -41,6 +40,10 @@ Demo
   # let's get the green running
   kubectl apply -f kube-nginx-green.yaml
 
+  # in another terminal window
+  watch -n0.3 -x kubectl get po
+
+  # 
   watch -n0.3 -x curl -s $(minikube ip):${SVC_PORT}
 
   # let's make the switch
