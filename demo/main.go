@@ -1,18 +1,18 @@
 package main
 
 import (
-	"github.com/microdevs/missy/data"
-	"github.com/microdevs/missy/log"
-	"github.com/microdevs/missy/service"
 	"net/http"
 	"os"
 	"sync"
+
+	"github.com/microdevs/missy/data"
+	"github.com/microdevs/missy/log"
+	"github.com/microdevs/missy/service"
 )
 
 type Handler struct {
-
 	readyMu  sync.Mutex
-	healthMu  sync.Mutex
+	healthMu sync.Mutex
 
 	// liveness in k8s
 	isHealthy bool
@@ -31,7 +31,7 @@ func main() {
 	}
 
 	log.Println("Starting zero demo service")
-	s := service.New()
+	s := service.New("zero-demo")
 	s.Host = "0.0.0.0"
 	s.Port = "8090"
 
@@ -57,17 +57,17 @@ func (h *Handler) Health(w http.ResponseWriter, r *http.Request) {
 	h.healthMu.Lock()
 	defer h.healthMu.Unlock()
 	if h.isHealthy == true {
-		data.MarshalWithCode(w, r, "OK. Node: " + h.nodeName, 200)
+		data.MarshalWithCode(w, r, "OK. Node: "+h.nodeName, 200)
 	} else {
-		data.MarshalWithCode(w, r, "Not working. Node: " + h.nodeName, 500)
+		data.MarshalWithCode(w, r, "Not working. Node: "+h.nodeName, 500)
 	}
 }
 
 func (h *Handler) Readiness(w http.ResponseWriter, r *http.Request) {
 	if h.isReady {
-		data.MarshalWithCode(w, r, "OK. Node: " +  h.nodeName, 200)
+		data.MarshalWithCode(w, r, "OK. Node: "+h.nodeName, 200)
 	} else {
-		data.MarshalWithCode(w, r, "Not Ready. Node: " +  h.nodeName, 500)
+		data.MarshalWithCode(w, r, "Not Ready. Node: "+h.nodeName, 500)
 	}
 }
 
@@ -75,13 +75,12 @@ func (h *Handler) DoUnHealthy(w http.ResponseWriter, r *http.Request) {
 	h.makeUnHealthy()
 }
 
-func  (h *Handler) makeUnHealthy() {
+func (h *Handler) makeUnHealthy() {
 	h.healthMu.Lock()
 	defer h.healthMu.Unlock()
 	log.Printf("Switch to unhealth!")
 	h.isHealthy = false
 }
-
 
 func (h *Handler) DoHealthy(w http.ResponseWriter, r *http.Request) {
 	h.healthMu.Lock()
@@ -93,7 +92,7 @@ func (h *Handler) DoNotReady(w http.ResponseWriter, r *http.Request) {
 	h.makeNotReady()
 }
 
-func  (h *Handler) makeNotReady() {
+func (h *Handler) makeNotReady() {
 	h.readyMu.Lock()
 	defer h.readyMu.Unlock()
 	log.Printf("Inform other services, I am not ready to serve reaquests!")
