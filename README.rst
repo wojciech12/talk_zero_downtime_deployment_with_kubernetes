@@ -26,6 +26,8 @@ Helpful? Please give a *LIKE* to `the most recent LinkedIn post about this talk 
 
 Questions, Feedback? Let me know at wojciech.barczynski@hypatos.ai.
 
+ps. We are hiring - `github.com/hypatos/jobs <https://github.com/hypatos/jobs>`_
+
 Start
 =====
 
