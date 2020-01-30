@@ -90,14 +90,15 @@ TBD
 
 To Be Added before the next talk:
 
+1. lifecycle: preStop sleep
 1. cover: what happening is during a k8s upgrade
 2. cover: `anti-affinity <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>`_
 3. conver ``pod's disruption budget``
 4. shadow deployment with (most probably) Istio
-5. feature switch with Golang
-6. A/B deployment with Golang
-7. Python example.
-8. Java example.
+6. feature switch with Golang
+7. A/B deployment with Golang
+8. Python example.
+9. Java example.
 
 History
 =======
