@@ -90,7 +90,7 @@ TBD
 
 To Be Added before the next talk:
 
-1. lifecycle: preStop sleep
+1. lifecycle: `preStop sleep <https://youtu.be/0o5C12kzEDI?list=PLj6h78yzYM2NDs-iu8WU5fMxINxHXlien&t=1306>`_
 1. cover: what happening is during a k8s upgrade
 2. cover: `anti-affinity <https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity>`_
 3. conver ``pod's disruption budget``
